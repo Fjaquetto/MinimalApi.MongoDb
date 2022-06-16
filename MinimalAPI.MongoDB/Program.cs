@@ -1,7 +1,7 @@
 using MediatR;
 using MinimalAPI.MongoDB.Data.Contexts;
 using MinimalAPI.MongoDB.Data.Service;
-using MinimalAPI.MongoDB.Domain.Commands.Requests;
+using MinimalAPI.MongoDB.Domain.Commands;
 using MinimalAPI.MongoDB.Domain.Interfaces.Service;
 using MinimalAPI.MongoDB.Models;
 using MinimalAPI.MongoDB.Models.Database;
@@ -39,7 +39,7 @@ app.MapGet("/cliente/{id}", async (IDataService _repo, string id) =>
 
 app.MapPost("/cliente", async (IMediator _mediator, Cliente cliente) =>
 {
-    await _mediator.Send(new CreateClientesRequest(cliente.Nome, cliente.Documento, cliente.Ativo));
+    await _mediator.Send(new CreateClienteCommand(cliente.Nome, cliente.Documento, cliente.Ativo));
 })
 .WithName("InsertClientes");
 

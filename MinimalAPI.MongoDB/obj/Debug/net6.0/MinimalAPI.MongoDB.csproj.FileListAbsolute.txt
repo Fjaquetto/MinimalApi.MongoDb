@@ -6,6 +6,9 @@ C:\Projetos\MinimalAPI.MongoDB\MinimalAPI.MongoDB\bin\Debug\net6.0\MinimalAPI.Mo
 C:\Projetos\MinimalAPI.MongoDB\MinimalAPI.MongoDB\bin\Debug\net6.0\MinimalAPI.MongoDB.dll
 C:\Projetos\MinimalAPI.MongoDB\MinimalAPI.MongoDB\bin\Debug\net6.0\MinimalAPI.MongoDB.pdb
 C:\Projetos\MinimalAPI.MongoDB\MinimalAPI.MongoDB\bin\Debug\net6.0\DnsClient.dll
+C:\Projetos\MinimalAPI.MongoDB\MinimalAPI.MongoDB\bin\Debug\net6.0\MediatR.dll
+C:\Projetos\MinimalAPI.MongoDB\MinimalAPI.MongoDB\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Projetos\MinimalAPI.MongoDB\MinimalAPI.MongoDB\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\Projetos\MinimalAPI.MongoDB\MinimalAPI.MongoDB\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Projetos\MinimalAPI.MongoDB\MinimalAPI.MongoDB\bin\Debug\net6.0\MongoDB.Bson.dll
 C:\Projetos\MinimalAPI.MongoDB\MinimalAPI.MongoDB\bin\Debug\net6.0\MongoDB.Driver.dll

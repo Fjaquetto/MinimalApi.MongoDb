@@ -8,8 +8,7 @@ namespace MinimalAPI.MongoDB.Domain.Interfaces
 
         Task<T> ObterPorPredicado(Expression<Func<T, bool>> predicate);
 
-        Task Inserir(T obj);
-
+        Task<T> Inserir(T obj);
         Task Excluir(Expression<Func<T, bool>> predicate);
     }
 }

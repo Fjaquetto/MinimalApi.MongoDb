@@ -1,7 +1,7 @@
+using MediatR;
 using MinimalAPI.MongoDB.Data.Contexts;
-using MinimalAPI.MongoDB.Data.Repository;
 using MinimalAPI.MongoDB.Data.Service;
-using MinimalAPI.MongoDB.Domain.Interfaces;
+using MinimalAPI.MongoDB.Domain.Commands.Requests;
 using MinimalAPI.MongoDB.Domain.Interfaces.Service;
 using MinimalAPI.MongoDB.Models;
 using MinimalAPI.MongoDB.Models.Database;
@@ -18,8 +18,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<MongoContext>();
 builder.Services.AddScoped<IDataService, DataService>();
-//builder.Services.AddScoped<IRepositoryClientes, RepositoryClientes>();
-
+builder.Services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
@@ -38,9 +37,9 @@ app.MapGet("/cliente/{id}", async (IDataService _repo, string id) =>
 })
 .WithName("GetClientes");
 
-app.MapPost("/cliente", async (IDataService _repo, Cliente cliente) =>
+app.MapPost("/cliente", async (IMediator _mediator, Cliente cliente) =>
 {
-    await _repo.Clientes.Inserir(new Cliente(cliente.Nome, cliente.Documento, cliente.Ativo));
+    await _mediator.Send(new CreateClientesRequest(cliente.Nome, cliente.Documento, cliente.Ativo));
 })
 .WithName("InsertClientes");
 

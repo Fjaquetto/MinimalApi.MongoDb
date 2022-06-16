@@ -17,9 +17,10 @@ namespace MinimalAPI.MongoDB.Data.Repository
             await _db.DeleteOneAsync(predicate);
         }
 
-        public async Task Inserir(T obj)
+        public async Task<T> Inserir(T obj)
         {
             await _db.InsertOneAsync(obj);
+            return obj;
         }
 
         public async Task<T> ObterPorPredicado(Expression<Func<T, bool>> predicate)
